@@ -21,3 +21,4 @@ void op_add(stack_t **head, unsigned int line_number)
 	(*head)->prev = NULL;
 	(*head)->n = first + second;
 }
+

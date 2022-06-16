@@ -21,3 +21,4 @@ void op_div(stack_t **head, unsigned int line_number)
 	(*head)->prev = NULL;
 	(*head)->n = second / first;
 }
+

@@ -14,3 +14,4 @@ void op_pchar(stack_t **head, unsigned int line_number)
 		char_error(head, line_number);
 	printf("%c\n", (*head)->n);
 }
+

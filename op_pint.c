@@ -12,3 +12,4 @@ void op_pint(stack_t **head, unsigned int line_number)
 		pint_error(head, line_number);
 	printf("%d\n", (*head)->n);
 }
+

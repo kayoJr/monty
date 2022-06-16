@@ -51,3 +51,4 @@ void op_push(stack_t **head, unsigned int line_number)
 		*head = new_node;
 	}
 }
+
