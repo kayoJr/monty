@@ -20,4 +20,3 @@ void op_mul(stack_t **head, unsigned int line_number)
 	(*head)->prev = NULL;
 	(*head)->n = first * second;
 }
-

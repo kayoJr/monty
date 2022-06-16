@@ -17,4 +17,3 @@ void op_swap(stack_t **head, unsigned int line_number)
 	(*head)->n = (*head)->next->n;
 	(*head)->next->n = temp_n;
 }
-

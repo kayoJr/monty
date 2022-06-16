@@ -52,4 +52,3 @@ int main(int argc, char **argv)
 	fclose(file_ptr);
 	return (0);
 }
-
