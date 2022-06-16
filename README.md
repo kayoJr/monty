@@ -1,72 +1,86 @@
-Monty Interpreter   
-=======================
-These is monty interpreter built on C language and complient with ```ISO90```,```ISO099```. ```&ISO11```.it reads monty bytcode files
-of any extension.However I prefer if you use ```.m``` extension.
+# Monty
 
-monty can run as either a stack (LIFO) or queue(FIFO).Mode can be switched mid-script. the interpreter 
-can handle a varity opcodes, including printing, mathmatical operations, and more all handled opcodes are listed below.
+A simple integer stack command line interface. Defaults to last in first out, with the queue command switching it to first in first out.
 
- :runner: Getting Started
-----------------------------
-- Ubuntu 14.04 LTS - operating system required
-- GCC 4.8.4 - Compiler used
+(Also some brainfuck scripts that were part of this project set in the brainfuck folder)
 
-:zap: How to install
-------------------------
-clone these repository to your machine:
+## Commands
+1. ```push```
+Pushes an integer onto the stack.
+2. ```pall```
+Prints all integers on the stack, starting at the top..
+3. ```pint```
+Prints the integer at the top of the stack.
+4. ```pop```
+Removes top element of stack.
+5. ```swap```
+Swaps top two elements of the stack.
+6. ```add```
+Add top two elements of the stack, remove them, and push result onto stack.
+7. ```sub```
+Subtract top two elements of the stack, remove them, and push result onto stack.
+8. ```div```
+Integer divide top two elements of the stack, remove them, and push result onto stack.
+9. ```mul```
+Multiply top two elements of the stack, remove them, and push result onto stack.
+10. ```mod```
+Integer division remainder top two elements, remove them, push result onto stack.
+11. ```pchar```
+Print the ascii character based on top integer in stack.
+12. ```pstr```
+Print the ascii characters related to integers in stack until 0 or >255.
+13. ```rotl```
+Rotate stack. Top element becomes last. Second from top becomes top.
+14. ```rotr```
+Rotate stack. Last element becomes top, Top element becomes second from top.
+15. ```stack```
+Changes mode to first in first out (the default behavior). Front of queue becomes top of stack.
+16. ```queue```
+Changes mode to last in first out. Top of stack becomes front of queue.
+
+## Getting started
+Clone the repository and run "gcc -o monty *.c". Then run "./monty \<scriptname\>"
+
+## Usage Examples
+The simplest usage is to push a few values onto the stack then print them all. Lets say we have a file like so:
 ```
-$ git clone https://github.com/Fraol123/monty.git
+push 1
+push 2
+push 3
+pall
 ```
-compile with the following:
+When we run this with "./monty scriptfile" we get the output:
 ```
-gcc -Wall -Werror -Wextra -pedantic *.c -o monty
+3
+2
+1
 ```
-Run monty on file:
+To use some of the math functions, we can write a script like so:
 ```
-./monty file.m
+push 1
+push 2
+push 3
+pall
+add
+add
+pall
 ```
-:wrench: Monty Opcodes
------------------------------
-- push
-   - Usage:```push <int>```
-   - pushes an element to the stack
-   - The parameter ```<int>``` must be an integer
-- pall
-   - prints value in stack/queus, starting fromm the top.
-- pint
-   - prints the top value of the stack\queus.
-- pop
-   - Removes the top element of the stack\queus.
-- swap
-   -swaps the top two element of stack\queue
-- nop
-  - does nothing
-- add
- - Adds the top two elements of the stack\queue
- - The result is stored in the second element from the top and the top element is poped
-- sub
-  - subtracts the top two elements of the stack\queue
-  - the result is stored in the second element from the top and the top element is poped 
-- div
-  - divides the top two elements of stack\queue
-  - takes zero's error in considaration
-- mul
-  - multiplies the top two elements of stack\queue
-- mod
-  - modules of the top two elements of stack\queue
+This nets us an output:
+```
+3
+2
+1
+6
+```
+If we want to print numbers as a string, we can have a script like:
+```
+push 49
+push 50
+push 51
+pstr
+```
+This gets the output "321"
 
-:postbox: opcode preceded by ```#``` are treted as comment
+## Authors
 
-:blue_book: AUTHOR
--------------------
-:computer:Fraol Tolera 
-
-:trumpet: Acknowldgement
----------------------------- 
-
-- Holberton School- for giving these challenging project and providing guidlines
-- ALX- sensei 
-- stack overflow - providing solution as needed
-
- 
- 
+Sidney Burkett
